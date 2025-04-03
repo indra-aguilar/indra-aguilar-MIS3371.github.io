@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 
 <!--
-Program Name: patient-form.html
+Program Name: patient-form_hw2.html
 Author: Indra Aguilar
 Date Created: 02-09-2025
-Date Last Edited: 02-09-2025
-Version: 1.0
+Date Last Edited: 04-02-2025
+Version: 2.0
 Description: A patient intake form for patients to input their information.
+-->
+
+<!-- 
+This file is a copy of the "index.html" used in the main part of the repository.
+It's stored seperately for documentation purposes. To see previous builds, please look at the previous assignment folders. 
 -->
 
 
@@ -24,7 +29,7 @@ Description: A patient intake form for patients to input their information.
                 <tr>
                     <td valign="top" align="left" width="20%">
                         <div class="image">
-                            <img align="center" src="Cloverleaf_Clinic_Logo.png" width="80px" />
+                            <img align="center" src="MIS3371/Homework2/Cloverleaf_Clinic_Logo.png" width="80px" />
                         </div>
                     </td>
                     <td valign="center" align="center">
@@ -39,7 +44,7 @@ Description: A patient intake form for patients to input their information.
         <hr>
 
 <!-- This is the ending page for the form. -->
-        <form action="thankyou-formpage.html">
+        <form action="MIS3371/Homework2/thankyou-formpage_hw2.html">
             <center>
                 <div class="format">
 
@@ -50,15 +55,21 @@ Description: A patient intake form for patients to input their information.
                         </tr>
                         <tr>
                             <td> <label for="fname"> First Name:</label> </td>
-                            <td> <input type="text" name="fname" id="fname" maxlength="30" title="Please enter your first name." required placeholder="ex: John"> </td>
+                            <td> <input type="text" name="fname" id="fname" minlength="1" maxlength="30" title="Please enter your first name." required 
+                                    placeholder="ex: John" pattern="[a-zA-Z']{1,30}" onblur="validateFname()" /> 
+                                 <span class="error" id="fname-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="minitial"> Middle Initial:</label> </td>
-                            <td> <input type="text" name="minitial" id="minitial" maxlength="1" title="Please enter your middle initial." required placeholder="ex: H"> </td>
+                            <td> <input type="text" name="minitial" id="minitial" maxlength="1" title="Please enter your middle initial." required 
+                                    placeholder="ex: H" pattern="[a-zA-Z']{0,1}" onblur="validateMinitial()"/> 
+                                 <span class="error" id="minitial-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="lname"> Last Name:</label> </td>
-                            <td> <input type="text" name="lname" id="lname" maxlength="30" title="Please enter your last name." required placeholder="ex: Smith"> </td>
+                            <td> <input type="text" name="lname" id="lname" maxlength="30" title="Please enter your last name." required 
+                                    placeholder="ex: Smith" pattern="[a-zA-Z']{1,30}" onblur="validateLname()"/>
+                                 <span class="error" id="lname-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="assex"> Assigned Sex at Birth:</label> </td>
@@ -70,11 +81,14 @@ Description: A patient intake form for patients to input their information.
                         </tr>
                         <tr>
                             <td> <label for="dob"> Date of Birth:</label> </td>
-                            <td> <input type="date" name="dob" id="dob" title="Please enter your date of birth." required> </td>
+                            <td> <input type="date" name="dob" id="dob" title="Please enter your date of birth." required onblur="validateDob()"/> 
+                                 <span class="error" id="dob-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="ssnumber"> Social Security #:</label> </td>
-                            <td> <input type="number" name="ssnumber" id="ssnumber" maxlength="9" title="Please enter your Social Security Number." required placeholder="ex: 123-45-6789"> </td>
+                            <td> <input type="number" name="ssnumber" id="ssnumber" minlength="9" maxlength="11" title="Please enter your Social Security Number." 
+                                    required placeholder="ex: 123-45-6789" onblur="validateSsnumber()"/> 
+                                 <span class="error" id="ssnumber-error"> </span> </td>
                         </tr>
 
 <!-- This part of the form asks for the user's address and contact information. -->
@@ -86,15 +100,20 @@ Description: A patient intake form for patients to input their information.
                         </tr>
                         <tr>
                             <td> <label for="address1"> Address Line 1:</label> </td>
-                            <td> <input type="text" name="address1" id="address1" maxlength="30" title="Please enter your address." required placeholder="ex: 123 Pinecone St."> </td>
+                            <td> <input type="text" name="address1" id="address1" maxlength="30" title="Please enter your address." required 
+                                    placeholder="ex: 123 Pinecone St." onblur="validateAddress1()"/> 
+                                 <span class="error" id="address1-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="address2"> Address Line 2:</label> </td>
-                            <td> <input type="text" name="address2" id="address2" maxlength="30" title="Please enter your address." placeholder="ex: Apt. #03"> </td>
+                            <td> <input type="text" name="address2" id="address2" maxlength="30" title="Please enter your address." 
+                                    placeholder="ex: Apt. #03"> </td>
                         </tr>
                         <tr>
                             <td> <label for="city"> City:</label> </td>
-                            <td> <input type="text" name="city" id="city" maxlength="30" title="Please enter your residing city." required placeholder="ex: Houston"> </td>
+                            <td> <input type="text" name="city" id="city" maxlength="30" title="Please enter your residing city." required 
+                                    placeholder="ex: Houston" onblur="validateCity()"/> 
+                                 <span class="error" id="city-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="state"> State:</label> </td>
@@ -156,15 +175,19 @@ Description: A patient intake form for patients to input their information.
                             </td>
                         </tr>
                             <td> <label for="zipcode"> ZIP Code:</label> </td>
-                            <td> <input type="text" name="zipcode" id="zipcode" maxlength="10" title="Please enter your ZIP Code." required placeholder="ex: 77015"> </td>
+                            <td> <input type="text" name="zipcode" id="zipcode" minlength="5" maxlength="10" title="Please enter your ZIP Code." required 
+                                    placeholder="ex: 77015" pattern="^\d{5}(-\d{4})?$" onblur="validateZipcode()"/>
+                                 <span class="error" id="zipcode-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="email"> Email Address:</label> </td>
-                            <td> <input type="email" name="email" id="email" title="Please enter your email address." required placeholder="ex: jsmith@domain.com"> </td>
+                            <td> <input type="email" name="email" id="email" title="Please enter your email address." required 
+                                    placeholder="ex: jsmith@domain.com"> </td>
                         </tr>
                         <tr>
                             <td> <label for="phonenumber"> Phone Number: </label> </td>
-                            <td> <input type="tel" name="phonenumber" id="phonenumber" title="Please enter your phone number." required placeholder="ex: 123-456-7890"> </td>
+                            <td> <input type="tel" name="phonenumber" id="phonenumber" title="Please enter your phone number." required 
+                                    placeholder="ex: 123-456-7890"> </td>
                         </tr>
                         
 <!-- This part of the form asks the user for their medical history. -->
@@ -229,12 +252,13 @@ Description: A patient intake form for patients to input their information.
                             <td> <input type="password" name="pword2" id="pword2" minlength="10" required> </td>
                         </tr>
 
-<!-- This part allows users to submit or reset the form. -->
+<!-- This part allows users to submit, reset, or review the form. -->
                         <tr>
                             <td colspan="4">
                                 <center>
                                     <input type="submit" name="submit">
-                                    <input type="reset" name="reset"
+                                    <input type="reset" name="reset"> 
+                                    <input type="button" name="review" id="review" value="review" onclick="reviewInput()" />
                                 </center>
                             </td>
                         </tr>
@@ -267,9 +291,9 @@ Description: A patient intake form for patients to input their information.
         </footer>
 
 <!-- This links a JavaScript file for dynamic behaviors. -->
-        <script src="homework1.js"> </script>
+        <script src="MIS3371/Homework2/homework2.js"> </script>
 
 <!-- This links a CSS file for styling. -->
-        <link rel="stylesheet" href="homework1-style.css"
+        <link rel="stylesheet" href="MIS3371/Homework2/homework2.css"
     </body>
 </html>
