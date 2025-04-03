@@ -2,10 +2,12 @@
 Program Name: homework.js
 Author: Indra Aguilar
 Date Created: 02/09/2025
-Date Last Edited: 04/02/2025
+Date Last Edited: 04/03/2025
 Version: 2.0
 Description: This file contains JavaScript support for the file "patient-form_hw2.html".
 */
+
+// Much of this code was taken in referrence from MISSO's resources from the TP Committee. 
 
 
 // This part displays the current date in "patient-form_hw2.html"
@@ -225,6 +227,9 @@ function validateUid()
 // This part validates the password data input in "patient-form_hw2.html".
 function validatePword()
     {
+
+
+
         // if (!pword.match(/[a-z]/)) errorMessage.push("Enter at least one lowercase letter");
         // if (!pword.match(/[A-Z]/)) errorMessage.push("Enter at least one uppercase letter");
         // if (!pword.match(/[0-9]/)) errorMessage.push("Enter at least one number");

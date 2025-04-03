@@ -2,8 +2,8 @@
 Program Name: homework1-style.css
 Author: Indra Aguilar
 Date Created: 02/09/2025
-Date Last Edited: 02/09/2025
-Version: 1.0
+Date Last Edited: 04/03/2025
+Version: 2.0
 Description: This file adds style to the "patient-form.html" file.
 */
 
@@ -128,3 +128,62 @@ footer
         font-weight: normal;
         margin-right: 10px;
     }
+
+
+/* This part styles the error messages. */
+.error 
+    {
+        color: rgb(124, 18, 18);
+        font-family: "optima", sans-serif;
+        font-weight: bold;
+    }
+
+
+/* This part styles the password validation messages. */
+.pword-message 
+    {
+        text-align: right;
+        font-family: "optima", sans-serif;
+        font-weight: bold;
+        position: relative;
+        left: 100px;
+        background: transparent;
+        padding: 10px;
+        border-spacing: 2px;
+        border-radius: 20px;
+        color: rgb(124, 18, 18);
+    }
+
+
+/* This part styles the review button. */
+#review 
+    {
+        margin-top: 5px;
+    }
+
+
+/* This part styles the review of data input after submission. */
+table.output, tr.output, td.output 
+    {
+        width: 500px;
+        background-color: rosybrown;
+        padding: 10px;
+        border-spacing: 2px;
+        border-radius: 20px;
+        color: rgb(124, 18, 18);
+    }
+
+
+/* This part styles individual cells. */
+td.output 
+    {
+        width: 500px;
+        background-color: rosybrown;
+        padding: 10px;
+        border-spacing: 2px;
+    }    
+
+
+
+
+
