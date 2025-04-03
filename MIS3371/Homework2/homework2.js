@@ -58,22 +58,22 @@ function validateDob()
         let maxDate = new Date().setFullYear(new Date().getFullYear() - 120);
 
         if (date > new Date())
-        {
-            document.getElementById("dob-error").innerHTML = "Date can't be in the future";
-            dob.value = "";
-            return false;
-        }
-            else if (date < new Date(maxDate))
+            {
+                document.getElementById("dob-error").innerHTML = "Date can't be in the future";
+                dob.value = "";
+                return false;
+            }
+        else if (date < new Date(maxDate))
             {
                 document.getElementById("dob-error").innerHTML = "Date can't be more than 120 years ago";
                 dob.value = "";
                 return false;
             }
         else 
-        {
-            document.getElementById("dob-error").innerHTML = "";
-            return true;
-        }
+            {
+                document.getElementById("dob-error").innerHTML = "";
+                return true;
+            }
     }
 
 
@@ -85,15 +85,15 @@ function validateSsnumber()
         const ssnR = /^[0-9]{3}-?[0-9]{2}-?[0-9]{4}$/;
 
         if (!ssnR.test(ssnumber)) 
-        {
-            document.getElementById("ssnumber-error").innerHTML = "Please enter a valid SSN";
-            return false;
-        }
-            else
-                {
-                    document.getElementById("ssnumber-error").innerHTML = "";
-                    return true;
-                }
+            {
+                document.getElementById("ssnumber-error").innerHTML = "Please enter a valid SSN";
+                return false;
+            }
+        else
+            {
+                document.getElementById("ssnumber-error").innerHTML = "";
+                return true;
+            }
     }
 
 
@@ -122,19 +122,19 @@ function validateZipcode()
     
     if (!zip) 
         {
-        document.getElementById("zipcode-error").innerHTML = "Please enter your ZIP code";
-        return false;
+            document.getElementById("zipcode-error").innerHTML = "Please enter your ZIP code";
+            return false;
         }
     
     if (zip.length > 5) 
         {
-        zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
+            zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
         } 
 
-        else 
-            {
-                zip = zip.slice(0, 5);
-            }
+    else 
+        {
+            zip = zip.slice(0, 5);
+        }
     
     zipInput.value = zip;
     document.getElementById("zipcode-error").innerHTML = "";
@@ -149,15 +149,15 @@ function validateEmail()
         var emailR = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
         if (!emailR.test(email)) 
-        {
-            document.getElementById("email-error").innerHTML = "Please enter a valid email address";
-            return false;
-        }
-            else
-                {
-                    document.getElementById("email-error").innerHTML = "";
-                    return true;
-                }
+            {
+                document.getElementById("email-error").innerHTML = "Please enter a valid email address";
+                return false;
+            }
+        else
+            {
+                document.getElementById("email-error").innerHTML = "";
+                return true;
+            }
     }
 
 
@@ -168,15 +168,15 @@ function validatePhonenumber()
         const phonenumberR = /^[0-9]{3}-?[0-9]{3}-?[0-9]{4}$/;
 
         if (!phonenumberR.test(phonenumber)) 
-        {
-            document.getElementById("phonenumber-error").innerHTML = "Please enter a valid phone number";
-            return false;
-        }
-            else
-                {
-                    document.getElementById("phonenumber-error").innerHTML = "";
-                    return true;
-                }
+            {
+                document.getElementById("phonenumber-error").innerHTML = "Please enter a valid phone number";
+                return false;
+            }
+        else
+            {
+                document.getElementById("phonenumber-error").innerHTML = "";
+                return true;
+            }
     }
 
 
@@ -227,15 +227,38 @@ function validateUid()
 // This part validates the password data input in "patient-form_hw2.html".
 function validatePword()
     {
+        const pword = document.getElementById("pword").value;
 
-
-
-        // if (!pword.match(/[a-z]/)) errorMessage.push("Enter at least one lowercase letter");
-        // if (!pword.match(/[A-Z]/)) errorMessage.push("Enter at least one uppercase letter");
-        // if (!pword.match(/[0-9]/)) errorMessage.push("Enter at least one number");
-        // if (!pword.match(/[!\@#\$%&*\-_\\.+\(\)]/)) errorMessage.push("Enter at least one special character");
-        // if (pword.includes(uid)) errorMessage.push("Password can't contain user ID");
-
+        if (!pword.match(/[a-z]/)) 
+            {
+                document.getElementById("pword-error").innerHTML = "Your password must contain at least one lowercase letter";
+                return false;
+            }
+        else if (!pword.match(/[A-Z]/)) 
+            {
+                document.getElementById("pword-error").innerHTML = "Your password must contain at least one uppercase letter";
+                return false;
+            }
+        else if (!pword.match(/[0-9]/)) 
+            {
+                document.getElementById("pword-error").innerHTML = "Your password must contain at least one number";
+                return false;
+            }
+        else if (!pword.match(/[!\@#\$%&*\-_\\.+\(\)]/]/)) 
+            {
+                document.getElementById("pword-error").innerHTML = "Your password must contain at least one special character";
+                return false;
+            }
+        else if (!pword.includes(uid))
+            {
+                document.getElementById("pword-error").innerHTML = "Your password cannot contain your User ID";
+                return false;
+            }
+        else
+            {
+                document.getElementById("pword-error").innerHTML = "";
+                return true;
+            }
     }
 
 
