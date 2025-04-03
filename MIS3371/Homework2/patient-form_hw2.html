@@ -182,12 +182,14 @@ It's stored seperately for documentation purposes. To see previous builds, pleas
                         <tr>
                             <td> <label for="email"> Email Address:</label> </td>
                             <td> <input type="email" name="email" id="email" title="Please enter your email address." required 
-                                    placeholder="ex: jsmith@domain.com"> </td>
+                                    placeholder="ex: jsmith@domain.com" pattern="[a-z0-9._%+-]+@[a-z0-9._]+\.[a-z]{2,20}$" onblur="validateEmail()"/> 
+                                 <span class="error" id="email-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="phonenumber"> Phone Number: </label> </td>
                             <td> <input type="tel" name="phonenumber" id="phonenumber" title="Please enter your phone number." required 
-                                    placeholder="ex: 123-456-7890"> </td>
+                                    placeholder="ex: 123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" onblur="validatePhonenumber()"/> 
+                                 <span class="error" id="phonenumber-error"> </span> </td>
                         </tr>
                         
 <!-- This part of the form asks the user for their medical history. -->
@@ -240,16 +242,22 @@ It's stored seperately for documentation purposes. To see previous builds, pleas
                             <th colspan="4"> Create An Account </th>
                         </tr>
                         <tr>
-                            <td class="td1"> <label for="uid"> User ID: </label></td> </td>
-                            <td> <input type="text" name="uid" maxlength="20" required title="Please enter a user ID:" placeholder="User ID" required /> </td>
+                            <td class="td1"> <label for="uid"> User ID: </label> </td>
+                            <td> <input type="text" name="uid" minlength="5" maxlength="20" required title="Please enter a user ID:" 
+                                    placeholder="User ID" required onblur="validateUid()"/> 
+                                 <span class="error" id="uid-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="pword"> Password: </label> </td>
-                            <td> <input type="password" name="pword" id="pword" minlength="10" required> </td>
+                            <td> <input type="password" name="pword" id="pword" minlength="10" required onblur="validatePword()"
+                                    oninput="validatePword()" onfocus="validatePword()"/> 
+                                 <span class="error" id="pword-error"> </span> </td>
                         </tr>
                         <tr>
                             <td> <label for="pword2"> Re-enter your Password:</label> </td>
-                            <td> <input type="password" name="pword2" id="pword2" minlength="10" required> </td>
+                            <td> <input type="password" name="pword2" id="pword2" minlength="10" required onblur="confirmPword()" 
+                                    oninput="confirmPword()" onfocus="confirmPword"/> 
+                                 <span class="error" id="pword2-error"> </span> </td>
                         </tr>
 
 <!-- This part allows users to submit, reset, or review the form. -->
@@ -258,12 +266,23 @@ It's stored seperately for documentation purposes. To see previous builds, pleas
                                 <center>
                                     <input type="submit" name="submit">
                                     <input type="reset" name="reset"> 
-                                    <input type="button" name="review" id="review" value="review" onclick="reviewInput()" />
+                                    <input type="button" name="review" id="review" value="review" onclick="reviewInput()"/>
                                 </center>
                             </td>
                         </tr>
                     </table>
                 </div>
+
+<!-- This part displays messages regarding password validation. -->                
+                <div class="pword-message">
+                    <span id="message1"> </span> <br/>
+                    <span id="message2"> </span> <br/>
+                    <span id="message3"> </span> <br/>
+                    <span id="message4"> </span> <br/>
+                </div>
+                <center>
+                    <p id="showInput"> </p>
+                </center>
             </center>
         </form>
 
