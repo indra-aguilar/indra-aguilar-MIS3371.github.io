@@ -1,0 +1,130 @@
+/*
+Program Name: homework1-style.css
+Author: Indra Aguilar
+Date Created: 02/09/2025
+Date Last Edited: 02/09/2025
+Version: 1.0
+Description: This file adds style to the "patient-form.html" file.
+*/
+
+
+
+/*Much of this code was taken in reference from MISSO's Resources from the TP Committee. */
+
+/* This part styles the header. */
+header 
+    {
+        width: 100%;
+        background-color: #000a56;
+        color:aliceblue;
+    }
+h1, h2
+    {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: bold;
+        flex-grow: 1;
+    }
+
+
+/* This part styles "Today's Date" in the "patient-form.html" file. */
+#today
+    {
+        text-align: left;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+        margin-right: 5px;
+    }
+
+
+/* This part styles the body. */
+body
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f5f5dc;
+        margin: 0;
+        height: 100%;
+        min-height: 100vh;
+    }
+
+
+/* This part styles the images used in "patient-form.html". */
+.image 
+    {
+        text-align: left;
+    }
+
+
+/* This part styles the table used. */
+.td1 
+    {
+        text-align: right;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+    }
+th
+    {
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+
+/* This part styles the labels used in the form/table. */
+label   
+    {
+        text-align: right;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+    }
+
+
+/* This part styles the user input fields. */
+input
+    {
+        text-align: left;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+    }
+textarea
+    {
+        text-align: left;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+    }
+
+
+/* This part styles the paragraph attributes. */
+p
+    {
+        text-align: right;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+    }
+
+
+/* This part styles the form. */
+form
+    {
+        flex-grow: 1;
+    }
+
+
+/* This part styles the footer. */
+footer
+    {
+        position: flex;
+        bottom: 0;
+        width: 100%;
+        background-color: #000a56;
+        height: 7.0rem;
+        color:aliceblue
+    }
+#footer
+    {
+        text-align: right;
+        font-family: "optima", sans-serif;
+        font-weight: normal;
+        margin-right: 10px;
+    }
