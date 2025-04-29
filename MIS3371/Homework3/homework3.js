@@ -244,7 +244,7 @@ function validatePword()
                 document.getElementById("pword-error").innerHTML = "Your password must contain at least one number";
                 return false;
             }
-        else if (!pword.match(/[!\@#\$%&*\-_\\.+\(\)]/]/)) 
+        else if (!pword.match(/[!\@#\$%&*\-_\\.+\(\)]/))
             {
                 document.getElementById("pword-error").innerHTML = "Your password must contain at least one special character";
                 return false;
