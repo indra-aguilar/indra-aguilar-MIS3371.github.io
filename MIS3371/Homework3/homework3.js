@@ -27,26 +27,27 @@ slider.oninput = function () {output.innerHTML = this.value;};
 
 // This part validates the first name data input in "patient-form_hw3.html".
 function validateFname()
-{
-    // 
+    {
+        // 
 
-}
+    }
 
 
 // This part validates the middle initial data input in "patient-form_hw3.html".
+    // Taken from MISSO's Resources from the TP Committee
 function validateMinitial()
-{
-    // 
+    {
+        // 
 
-}
+    }
 
 
 // This part validates the last name data input in "patient-form_hw3.html".
 function validateLname()
-{
-    // 
+    {
+        // 
 
-}
+    }
 
 
 // This part validates the date of birth data input in "patient-form_hw3.html".
@@ -99,10 +100,10 @@ function validateSsnumber()
 
 // This part validates the address data input in "patient-form_hw3.html".
 function validateAddress1()
-{
-    // 
+    {
+        // 
 
-}
+    }
 
 
 // This part validates the city data input in "patient-form_hw3.html".
