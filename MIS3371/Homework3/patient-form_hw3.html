@@ -260,13 +260,14 @@ It's stored seperately for documentation purposes. To see previous builds, pleas
                                  <span class="error" id="pword2-error"> </span> </td>
                         </tr>
 
-<!-- This part allows users to submit, reset, or review the form. -->
+<!-- This part allows users to submit, reset, review, or validate the data in the form. -->
                         <tr>
                             <td colspan="4">
                                 <center>
                                     <input type="submit" name="submit">
                                     <input type="reset" name="reset"> 
                                     <input type="button" name="review" id="review" value="Review" onclick="reviewInput()"/>
+                                    <input type="'button" name="validate" id="validate" style="font-family: sans-serif;" onclick="validateEverything()">
                                 </center>
                             </td>
                         </tr>
@@ -284,6 +285,14 @@ It's stored seperately for documentation purposes. To see previous builds, pleas
                     <p id="showInput"> </p>
                 </center>
             </center>
+
+<!-- This part displays an alert box for required fields. -->
+                <div id="alertbox"
+                    <div id="alertcontent">
+                        <h4> Please fill out all of the required fields. </h4>
+                        <button id="closealert"> OK </button>
+                    </div>
+                </div>
         </form>
 
 <!-- This is the footer of the page. -->
