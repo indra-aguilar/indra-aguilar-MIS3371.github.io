@@ -106,10 +106,21 @@ function validateAddress1()
 
 
 // This part validates the city data input in "patient-form_hw3.html".
+    // Taken from MISSO's Resources from the TP Committe
 function validateCity()
 {
-    // 
+    city = document.getElementById("city").value.trim();
 
+    if (!city)
+        {
+          document.getElementById("cityerror").innerHTML = "Please enter your residing city" ;
+          return false;
+        }
+        else
+            {
+                document.getElementById("cityerror").innerHTML = "";
+                return true;
+            }
 }
 
 
@@ -323,6 +334,97 @@ function removeReview()
     {
         document.getElementById("showInput").innerHTML = "";
     }
+
+// This part grants functionality to the alert box in "patient-form_hw3.html".
+    // Taken from MISSO's Resources from the TP Committee
+function showAlert()
+    {
+        var alertBox = document.getElementById("alertbox");
+        var closeAlert = document.getElementById("closealert");
+
+        alertBox.style.display = "block";
+        closeAlert.onclick = function()
+            {
+                alertBox.style.display = "none";
+            };
+    }
+
+// This part runs the previous validation methods for all fields.
+    // Taken in reference from MISSO's Resources from the TP Committee
+function validateEverything()
+    {
+        let valid = true;
+
+        if (!validateFname())
+            {
+               valid = false; 
+            }
+
+        if (!validateMinitial())
+            {
+                valid = false; 
+            }
+
+        if (!validateLname())
+            {
+                valid = false; 
+            }
+
+        if (!validateSsnumber())
+            {
+                valid = false; 
+            }
+
+        if (!validateAddress1())
+            {
+                valid = false; 
+            }
+
+        if (!validateCity())
+            {
+                valid = false; 
+            }
+
+        if (!validateZipcode())
+            {
+                valid = false; 
+            }
+
+        if (!validateEmail())
+            {
+                valid = false; 
+            }
+
+        if (!validatePhonenumber())
+            {
+                valid = false; 
+            }
+        
+        if (!validateUid())
+            {
+                valid = false; 
+            }
+
+        if (!validatePword())
+            {
+                valid = false; 
+            }
+              
+        if (!confirmPword())
+            {
+                valid = false; 
+            }
+        if (valid) 
+            {
+                document.getElementById("submit").disabled = false;
+            }       
+            else 
+                {
+                    showAlert();
+                }
+    }
+
+
 
 
 
