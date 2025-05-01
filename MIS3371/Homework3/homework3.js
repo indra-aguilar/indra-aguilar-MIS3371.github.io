@@ -84,8 +84,6 @@ function validateMinitial()
                     document.getElementById("minitial-error").innerHTML = "";
                     return true;
                 }
-
-
     }
 
 
@@ -177,7 +175,16 @@ function validateSsnumber()
 // This part validates the address data input in "patient-form_hw3.html".
 function validateAddress1()
     {
-        // 
+        if (address1 == "")
+            {
+                document.getElementById("address1-error").innerHTML = "Please enter your address";
+                return false;
+            } 
+        else
+            {
+              document.getElementById("address1-error").innerHTML = "";
+              return true;  
+            }
 
     }
 
