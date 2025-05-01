@@ -26,10 +26,40 @@ slider.oninput = function () {output.innerHTML = this.value;};
 
 
 // This part validates the first name data input in "patient-form_hw3.html".
+    // Taken from MISSO's Resources from the TP Committee
 function validateFname()
     {
-        // 
+        let fname = document.getElementById("fname").value;
+        var namePattern = /^[A-Z]+$/;
 
+        if (fname = "")
+            {
+                document.getElementById("fname-error").innerHTML = "Please enter your first name";
+                return false;
+            }
+            else if (fname !="")
+                {
+                    if (!fname.match(namePattern))
+                        {
+                            document.getElementById("fname-error").innerHTML = "Please only enter letters, apostrophes, and dashes";
+                            return false;
+                        }
+                }
+            else if (fname.length < 2)
+                {
+                    document.getElementById("fname-error").innerHTML = "Your first name must be at least two characters";
+                    return false;
+                }
+            else if (fname.length > 30)
+                {
+                   document.getElementById("fname-error").innerHTML = "Your first name must be less than thirty characters";
+                   return false; 
+                }
+            else 
+                {
+                    document.getElementById("fname-error").innerHTML = "";
+                    return true;
+                }
     }
 
 
@@ -37,16 +67,62 @@ function validateFname()
     // Taken from MISSO's Resources from the TP Committee
 function validateMinitial()
     {
-        // 
+        let minitial = document.getElementById("minitial").value;
+        const namePattern = /^[A-Z]+$/;
+
+        minitial = minitial.toUpperCase();
+        document.getElementById("minitial").value = minitial;
+
+        if (!minitial.match(namePattern))
+            {
+                document.getElementById("minitial-error").innerHTML = "Middle initial must be a single uppercase letter";
+                return false;
+            }
+
+            else
+                {
+                    document.getElementById("minitial-error").innerHTML = "";
+                    return true;
+                }
+
 
     }
 
 
 // This part validates the last name data input in "patient-form_hw3.html".
 function validateLname()
-    {
-        // 
+{
+        let lname = document.getElementById("lname").value;
+        var namePattern = /^[A-Z]+$/;
 
+        if (lname = "")
+            {
+                document.getElementById("lname-error").innerHTML = "Please enter your last name";
+                return false;
+            }
+            else if (lname !="")
+                {
+                    if (!lname.match(namePattern))
+                        {
+                            document.getElementById("lname-error").innerHTML = "Please only enter letters, apostrophes, and dashes";
+                            return false;
+                        }
+                }
+            else if (lname.length < 2)
+                {
+                    document.getElementById("lname-error").innerHTML = "Your last name must be at least two characters";
+                    return false;
+                }
+            else if (lname.length > 30)
+                {
+                   document.getElementById("lname-error").innerHTML = "Your last name must be less than thirty characters";
+                   return false; 
+                }
+            else 
+                {
+                    document.getElementById("lname-error").innerHTML = "";
+                    return true;
+                }
     }
 
 
