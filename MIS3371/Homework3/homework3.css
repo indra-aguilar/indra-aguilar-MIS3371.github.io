@@ -184,6 +184,75 @@ td.output
     }    
 
 
+/* This part styles the alert box*/
+#alertbox 
+    {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+    }
 
 
+/* This part styles the content in the alert box*/
+#alertcontent h4
+    {
+        background-color: rgb(255, 147, 125);
+        border-radius: 10px;
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        margin-top: 5px;
+        padding: 5px;
+        text-align: center;
+    }    
 
+
+/* This part styles the close button in the alert box */
+#closealert
+    {
+        background-color: white;
+        border-width: 1px;
+        border-style: solid;
+        color: black;
+        border-color: black;
+        font-size: 10px;
+        height: 5px;
+        width: 5px;
+        border-radius: 10px;
+        cursor: pointer;
+        margin-top: 5px;
+        text-align: center;
+        font-family: sans-serif;
+    }
+
+
+/* This part styles the container that has the password messages */
+.pword-message
+    {
+        text-align: right;
+        font-family: sans-serif;
+        font-weight: normal;
+        position: relative;
+        left: 5px;
+        background: transparent;
+        padding: 5px;
+        border-spacing: 5px;
+        border-radius: 10px;
+        color: red;
+    }
+
+
+/* This part styles the output table used during the review process */
+/* table.output, tr.output, td.output
+    {
+
+
+    }
+
+
+/* This part styles the individual table cells used on the output table */
+/* td.outputdata
+    {
+
+
+    }
