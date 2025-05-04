@@ -138,12 +138,19 @@ function validateDob()
                 dob.value = "";
                 return false;
             }
+        else if (date = new Date())
+            {
+                document.getElementById("dob-error").innerHTML = "Please enter your date of birth";
+                dob.value = "";
+                return false;
+            }
         else if (date < new Date(maxDate))
             {
                 document.getElementById("dob-error").innerHTML = "Date can't be more than 120 years ago";
                 dob.value = "";
                 return false;
             }
+
         else 
             {
                 document.getElementById("dob-error").innerHTML = "";
