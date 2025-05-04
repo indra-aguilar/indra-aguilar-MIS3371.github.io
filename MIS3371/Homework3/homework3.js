@@ -138,12 +138,6 @@ function validateDob()
                 dob.value = "";
                 return false;
             }
-        else if (date = new Date())
-            {
-                document.getElementById("dob-error").innerHTML = "Please enter your date of birth";
-                dob.value = "";
-                return false;
-            }
         else if (date < new Date(maxDate))
             {
                 document.getElementById("dob-error").innerHTML = "Date can't be more than 120 years ago";
@@ -182,7 +176,7 @@ function validateSsnumber()
 // This part validates the address data input in "patient-form_hw3.html".
 function validateAddress1()
     {
-        if (address1 == "")
+        if (address1 == " ")
             {
                 document.getElementById("address1-error").innerHTML = "Please enter your address";
                 return false;
